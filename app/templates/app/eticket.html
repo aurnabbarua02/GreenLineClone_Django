@@ -1,0 +1,58 @@
+{% extends 'app/template.html' %}
+
+{% block content %}
+<div class="container">   
+    <div class="row">
+        <form action="" method="get" class="eticket-form">       
+            <label for="leaving_from">Leaving From</label>
+            {{ form.leaving_from }}    
+            <label for="going_to">Going To</label>
+            {{ form.going_to }}  
+            <label for="date">Date</label>
+            {{ form.date }}
+            <input type="submit" value="Search" class="btn btn-success rounded-pill">   
+        </form>
+    </div>
+    
+    {% if leaving_from and going_to and date %}
+    <div class="row" style="background-color: rgb(81, 216, 81); padding-top: 10px; margin-top: 10px;">        
+        <p style="color: rgb(53, 53, 233);">{{ leaving_from }} - {{ going_to }} on {{ date }}</p>
+        <h3 style="color: rgb(53, 53, 233);">Available Buses</h3>
+    </div>
+    
+    <div class="row" style="margin-top: 10px;">
+        <table class="table">
+            <tr style="border-width: 2px; border-left: 2px; border-right: 2px;">
+                <th>Operator & Coach Info</th>
+                <th>Departure Time</th>
+                <th>Seats Capacity</th>
+                <th>Fare (BDT)</th>
+            </tr>
+    
+            {% for travel in travelDetails %}
+            <tr style="border-width: 2px; border-left: 2px; border-right: 2px;">
+                <td>
+                    <span style="font-size: 22px;">{{ travel.bus.bus_name }}</span> <br>
+                    {{ travel.bus.bus_type }} <br>
+                    {{ travel.bus.bus_details }}
+                </td>
+                <td>
+                    {{ travel.time|time:"g:i A" }} <br>
+                    {{ travel.day }} 
+                </td>
+                <td>{{ travel.bus.sit_capacity }}</td>
+                <td><span style="font-size: 22px;">{{ travel.fare }}</span></td>
+                <td><a href="{% url 'confirmTicket' travel.travel_id %}" style="background-color: rgb(76, 76, 216);color: white;" class="btn">View Seats</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" style="text-align: center; color: rgb(227, 80, 80);">No buses available for the selected route and date.</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+       
+    <br>
+</div>
+{% endblock %}

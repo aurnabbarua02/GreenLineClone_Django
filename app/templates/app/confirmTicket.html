@@ -1,0 +1,53 @@
+{% extends 'app/template.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <h3 class="text-center mt-2">Book Your Seat</h3>
+    </div>
+    <div class="row">
+        <p class="text-center" style="border: 2px solid rgb(241, 78, 78);">{{ travel.date }} {{ travel.day }} 
+            {{ travel.time }}</p>
+    </div>
+    <div class="row">
+        <p class="text-center" style="border: 2px solid rgb(241, 78, 78);">{{ travel.bus.bus_name }} - {{ travel.bus.bus_type }} <br>{{ travel.bus.bus_details }} <br>
+            Fare: BDT {{ travel.fare }}, Bkash: {{ headOffice.tel }}
+            <br> Available Ticket = {{ available_ticket }}
+        </p>
+    </div>
+    <div class="row query">
+        <form method="post">
+            {% csrf_token %}
+            <label for="passenger_name">Passenger Name</label>
+            {{ form.passenger_name }}
+            <label for="passenger_email">Passenger Email</label>
+            {{ form.passenger_email }}
+            <label for="number_of_ticket">Number of Ticket</label>
+            {{ form.number_of_ticket }}
+            <label for="transaction_id">Transaction Id</label>
+            {{ form.transaction_id }}
+            <input type="submit" value="Confirm Ticket" class="btn btn-success mt-2">
+        </form>
+    </div>
+    <style>
+    .alert-success{
+        background-color: rgb(15, 199, 15);color: white;
+    }
+    .alert-error{
+        background-color: rgb(205, 71, 71);color: white;
+    }
+    </style>
+    <div class="row">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} mt-2">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+
+    </div>
+
+</div>
+{% endblock %}

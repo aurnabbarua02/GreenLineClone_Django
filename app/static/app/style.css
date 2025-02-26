@@ -1,0 +1,218 @@
+.navbar{
+    background-color: white;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: small;
+}
+
+li a:hover{
+    background-color: rgb(6, 211, 6);
+    color: white;
+}
+.active{
+    background-color: rgb(6, 211, 6);
+    color: white;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.container{
+    background-color: white;
+    margin-bottom: 70px;
+    padding-left: 0%;
+    padding-right: 0%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.row{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.section0{
+    width: 100%;
+    height: 300px;
+}
+
+.container .section1{
+    margin-top: 20px;
+}
+.container h5{
+    text-align: center;
+    color: green;
+    padding-bottom: 10px;
+}
+.container .section1 p{
+    font-size: 12px;
+    text-align: justify;
+}
+.container .section2{
+    background-color: blueviolet;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: white;    
+    margin-bottom: 10px;
+    border-radius: 5px;
+    height: 230px;
+}
+.container .section2 p{
+    text-align: center;
+    font-size: small;
+}
+.container .section2:hover{
+    background-color: green;       
+}
+.container .section2:hover .clickMore{
+    visibility: visible;
+    
+} 
+.container .clickMore{
+    border-radius: 50px;
+    visibility: hidden;
+    font-size: small;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    padding: 5px;
+}
+.container .clickMore:hover{
+    background-color: black;
+    color: white;
+}
+.container .section3{
+    margin-top: 30px;
+    padding-bottom: 50px;
+}
+.container .section3 p{
+    font-size: small;
+    color: green;
+}
+.container .section3 select{
+    width: 80%;
+    font-size: small;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.container .section3 img{
+    width: 80%;
+    padding-bottom: 10px;
+}
+footer .footer-upper{
+    background-color: #0b4a4f;
+    color: white;
+    padding-bottom: 50px;
+    padding-top: 70px;
+}
+footer .footer-upper span{
+    color: #2dafb8;
+}
+footer .footer-upper p{
+    text-align: justify;
+    font-size: small;
+}
+footer h6{
+    padding-bottom: 20px;
+}
+footer .row{    
+    padding-left: 20px;
+}
+footer ul{
+    list-style-type: none;
+}
+footer ul li{
+    position: relative;
+    font-size: small;
+    padding-bottom: 7px;
+}
+footer ul li span{
+    position: absolute; 
+    left: -25px;
+    color: white;
+}
+footer .footer-bottom{
+    background-color: #00312f;
+    color: white;
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    font-size: small;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+}
+footer a:hover{
+    background-color: rgb(6, 211, 6);
+}
+
+.about, .service .row{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.about, .service_address .row h6{
+    color: green;
+}
+.about .row p, li{
+    font-size: small;
+    text-align: justify;
+    color: black;
+}
+
+.service 
+.row p{
+    font-size: small;
+    text-align: justify;
+}
+.about .row ul{
+    padding-left: 30px;
+}
+.about .row li{
+    font-size: small;
+}
+.query .row{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+.query form {
+    font-size: small;
+}
+
+.query form input{
+    width: 100%;
+}
+.query form textarea{
+    height: 100px;
+    width: 100%;
+}
+.contact .row {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+.contact .row .col p{
+    font-size: small;
+    text-align: justify;
+}
+.contact .row .col h6{
+    color: green;
+}
+
+.service_address .row .col p{
+    font-size: small;
+    text-align: justify;
+}
+.eticket-form{
+    padding-top: 20px;
+}
+.eticket-form select, input{
+    padding-right: 10px;
+    margin-right: 10px;
+}
+.alert-success{
+    background-color: rgb(15, 199, 15);
+}
+.alert-error{
+    background-color: rgb(205, 71, 71);
+}

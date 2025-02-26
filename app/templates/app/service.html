@@ -1,0 +1,17 @@
+{% extends 'app/template.html' %}
+
+{% block content %}
+{% load static %}
+  <div class="container service">
+    <div class="row">
+        <p> <br>
+            <b>Greenline Paribahan</b> <br>
+
+            {% for service in services %}
+            {{ service.start }} - {{ service.destination }} - {{ service.start }}<br>           
+            {% endfor %} <br>
+            
+        </p><br>
+    </div>
+</div>
+{% endblock %}

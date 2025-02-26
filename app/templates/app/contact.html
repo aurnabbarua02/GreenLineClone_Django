@@ -1,0 +1,25 @@
+{% extends 'app/template.html' %}
+
+{% block content %}
+{% load static %}
+<div class="container contact">
+    <div class="row">
+        <div class="col col-md-6 col-12">
+            <h6>Head Office</h6>
+            <p>{{ headOffice.address }}, {{ headOffice.area }} <br>
+
+                <b>TEL</b> : {{ headOffice.tel }} <br>
+                
+                <b>Fax</b> : {{ headOffice.fax }} <br>
+                
+                <b>Email</b> : {{ headOffice.email }}</p>
+        </div>
+        <div class="col col-md-6 col-12">
+            <h6>Call Center</h6>
+            <p><b>MOB</b> : {% for Mob in callcenterMob %} {{ Mob.mob }}, {% endfor %} <br>
+
+                <b>TEL</b> : {% for Tel in callcenterTel %} {{ Tel.tel }}, {% endfor %}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

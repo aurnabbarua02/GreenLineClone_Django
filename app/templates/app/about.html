@@ -1,0 +1,39 @@
+{% extends 'app/template.html' %}
+
+{% block content %}
+{% load static %}
+    <div class="container about">
+        <div class="row">            
+            <h6 class="mt-2">Company Profile</h6>
+            {% for Profile in companyProfile %}
+            <p>{{ Profile.profile }} </p> 
+            {% endfor %}         
+
+            <h6>Our Mission</h6>            
+            <p>The mission of the Transport Company may be categorized by the following principal activities.</p>
+            <ul>
+                {% for Mission in companyMission %}
+                <li>{{ Mission.mission }}</li>
+                {% endfor %}                
+            </ul>
+
+
+
+            <h6>Our Vision</h6>
+            {% for Vision in companyVision %}      
+            <p>{{ Vision.vision }} </p>
+            {% endfor %}                
+
+            <h6>Our Founder</h6>            
+            <p><b>{{ companyFounder.name }}</b> {{ companyFounder.description }} </p>
+
+            <h6>Our Management</h6>            
+            <p>
+            {% for Management in companyManagement %}
+                <b>{{ Management.name }}</b> <br> {{ Management.title }} <br>
+            {% endfor %} </p>
+            <br>
+        </div>
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'app/template.html' %}
+
+{% block content %}
+{% load static %}
+<div class="container service_address">
+    <div class="row">
+        <h6>{{ address }}</h6> <hr>         
+        {% for i in info %}
+        {% if i.district == address %}
+        <div class="col col-md-3 col-6">
+            <p>Counter Address: <br>
+            {{ i.area }} <br>
+            {{ i.address }}, <br>
+            {{ i.detail_area }}. <br>
+            {{ i.phone1 }} <br>
+            {% if i.phone2 %}{{ i.phone2 }}{% endif %} <br>
+            {% if i.phone3 %}{{ i.phone3 }}{% endif %}</p>
+        </div>
+        {% endif %}
+       {% endfor %}
+      
+        
+    </div>
+</div>
+{% endblock %}
